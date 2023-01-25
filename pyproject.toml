@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "rehirer-backend"
+version = "0.1.0"
+description = "An all-in-one human-centric HR tool for Candidates and Recruiters"
+authors = ["Cesar Cotiz <cotizcesar@gmail.com>"]
+license = "AGPLv3"
+readme = "README.md"
+packages = [{include = "rehirer_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.89.1"
+uvicorn = "^0.20.0"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.1"
+coverage = "^7.1.0"
+
+[tool.poetry.group.lint]
+optional = true
+
+[tool.poetry.group.lint.dependencies]
+isort = "^5.11.4"
+flake8 = "^6.0.0"
+black = "^22.12.0"
+safety = "^2.3.5"
+
+[tool.poetry.group.deploy]
+optional = true
+
+[tool.poetry.group.deploy.dependencies]
+awsebcli = "^3.20.3"
+
+[tool.poetry.group.develop.dependencies]
+pre-commit = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

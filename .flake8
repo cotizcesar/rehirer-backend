@@ -1,0 +1,19 @@
+[flake8]
+ignore =
+  E203,
+  E266,
+  E501,
+  W503,
+  E402,
+  E731,
+  B950,
+  B011,
+  B014,
+  N812,
+  N804,
+  B008,
+  S101,
+  E712
+max-line-length = 80
+select = N,B,C,E,F,S,W,T4,B9
+docstring-convention=google
