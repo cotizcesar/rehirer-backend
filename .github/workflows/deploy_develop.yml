@@ -5,6 +5,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: develop
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -21,7 +22,7 @@ jobs:
           pip install awsebcli
       - name: Init EB CLI
         run: |
-           eb init --platform ${{secrets.AWS_PLATFORM}} --region ${{secrets.AWS_DEFAULT_REGION }}
+           eb init --platform ${{ secrets.AWS_PLATFORM }} --region ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Deploy to Elastic Beanstalk
         run: |
           eb deploy rehirer-backend-develop
