@@ -19,6 +19,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install awsebcli
+      - name: Init EB CLI
+        run: |
+           eb init --platform ${{secrets.AWS_PLATFORM}} --region ${{secrets.AWS_DEFAULT_REGION }}
       - name: Deploy to Elastic Beanstalk
         run: |
-          eb deploy
+          eb deploy rehirer-backend-develop
